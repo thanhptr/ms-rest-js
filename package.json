@@ -56,12 +56,14 @@
     "abortcontroller-polyfill": "^1.1.9",
     "express": "^4.16.3",
     "glob": "^7.1.2",
-    "mocha": "^5.1.1",
+    "mocha": "^5.2.0",
     "mocha-chrome": "^1.1.0",
     "npm-run-all": "^4.1.2",
+    "nyc": "^12.0.2",
     "semver": "^5.5.0",
     "should": "5.2.0",
     "shx": "^0.2.2",
+    "source-map-support": "^0.5.6",
     "ts-loader": "^4.2.0",
     "ts-node": "^5.0.1",
     "tslint": "^5.10.0",
@@ -85,6 +87,7 @@
     "build:node": "tsc",
     "build:es": "tsc -p tsconfig.es.json",
     "build:browser": "webpack && node node_modules/uglify-es/bin/uglifyjs --source-map -c -m -o msRestBundle.min.js msRestBundle.js",
+    "coverage": "nyc mocha \"test/shared/**/*.ts\"",
     "watch:node": "tsc -w",
     "watch:browser": "webpack -w",
     "test": "run-p test:tslint test:unit",
@@ -96,5 +99,20 @@
     "local": "node ./.scripts/local.js",
     "preview": "node ./.scripts/preview.js",
     "latest": "node ./.scripts/latest.js"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "include": [
+      "lib/**/*.ts"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "all": true
   }
 }
