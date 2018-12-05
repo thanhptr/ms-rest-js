@@ -1,3 +1,24 @@
+# FORK of ms-rest-js
+This forked version of original [@azure/ms-rest-js](https://github.com/Azure/ms-rest-js) to support XHR client to return HTTP StatusCode & Response body in the error reject/throw, to enable client to handle API error sepcific logic.
+
+## Install
+```json
+"dependencies": {
+    "@gtm/ms-rest-js": "^1.2.1"
+}
+```
+
+## How to use
+```javascript
+yourApi.aFunction(args, (err: RestError, result?: any) => {
+    if (!err) {
+        console.log('Your API result: ', result);
+    } else {
+        console.error('Error with HTTP status & body', err, err.statusCode,  err.body);
+    }
+}
+```
+
 # ms-rest-js
 
 [![Build Status](https://dev.azure.com/azure-public/adx/_apis/build/status/public.Azure.ms-rest-js)](https://dev.azure.com/azure-public/adx/_build/latest?definitionId=6)

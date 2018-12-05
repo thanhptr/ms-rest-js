@@ -1,9 +1,9 @@
 {
-  "name": "@azure/ms-rest-js",
+  "name": "@gtm/ms-rest-js",
   "author": {
-    "name": "Microsoft Corporation",
-    "email": "azsdkteam@microsoft.com",
-    "url": "https://github.com/Azure/ms-rest-js"
+    "name": "Thanh Pham",
+    "email": "thanhptr@gmail.com",
+    "url": "https://github.com/thanhptr/ms-rest-js"
   },
   "version": "1.2.1",
   "description": "Isomorphic client Runtime for Typescript/node.js/browser javascript client libraries generated using AutoRest",
@@ -96,13 +96,13 @@
     "webpack-dev-middleware": "^3.1.2",
     "yarn": "^1.6.0"
   },
-  "homepage": "https://github.com/Azure/ms-rest-js",
+  "homepage": "https://github.com/thanhptr/ms-rest-js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Azure/ms-rest-js.git"
+    "url": "git@github.com:thanhptr/ms-rest-js.git"
   },
   "bugs": {
-    "url": "http://github.com/Azure/ms-rest-js/issues"
+    "url": "http://github.com/thanhptr/ms-rest-js/issues"
   },
   "scripts": {
     "build": "run-p build:scripts build:lib",
@@ -118,7 +118,8 @@
     "publish-preview": "mocha --no-colors && shx rm -rf dist/test && node ./.scripts/publish",
     "local": "ts-node ./.scripts/local.ts",
     "latest": "ts-node ./.scripts/latest.ts",
-    "prepack": "npm i && npm run build"
+    "prepack": "npm i && npm run build",
+    "publish-only": "npm publish --access public"
   },
   "sideEffects": false
 }
